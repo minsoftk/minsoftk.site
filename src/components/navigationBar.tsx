@@ -4,6 +4,7 @@ import {
   faGit,
   faLinkedinIn,
   faFacebookF,
+  faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
@@ -90,7 +91,7 @@ export default function Navigation() {
               <li>
                 <a
                   href="https://blog.minsoftk.com"
-                  className="!border-white !bg-transparent"
+                  className="!bg-transparent text-[#222f3e]"
                 >
                   Blog
                 </a>
@@ -107,14 +108,16 @@ export default function Navigation() {
                     icon={faGit}
                   />
                 </a>
+                <span>깃허브</span>
               </li>
               <li>
-                <a href="https://blog.minsoftk.com">
+                <a href="#">
                   <FontAwesomeIcon
                     color="black"
                     icon={faLinkedinIn}
                   />
                 </a>
+                <span>링크드인</span>
               </li>
               <li>
                 <a href="https://blog.minsoftk.com">
@@ -123,6 +126,16 @@ export default function Navigation() {
                     icon={faFacebookF}
                   />
                 </a>
+                <span>페이스북</span>
+              </li>
+              <li>
+                <a href="https://blog.minsoftk.com">
+                  <FontAwesomeIcon
+                    color="black"
+                    icon={faYoutube}
+                  />
+                </a>
+                <span>유튜브</span>
               </li>
             </ul>
           </nav>

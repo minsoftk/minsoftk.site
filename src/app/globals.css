@@ -17,3 +17,54 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@theme {
+  --color-Youtube: oklch(54.54% 0.2059 27.74);
+  --color-Facebook: oklch(58.91% 0.2029 257.86);
+  --color-LinkdIn: oklch(51.56% 0.1632 254.73);
+}
+
+@layer components {
+  .sns-links *,
+  .sns-links *:before,
+  .sns-links *:after {
+    @apply transition-transform duration-400 ease-in-out;
+  }
+  .sns-links li {
+    @apply relative;
+  }
+  .sns-links li a {
+    @apply relative z-0 block size-[40px] overflow-hidden rounded-full border-2 bg-white text-center text-2xl leading-[40px] shadow-lg;
+  }
+  .sns-links li a:before {
+    /* @apply absolute bottom-0 left-0 z-[-1] h-0 w-full origin-bottom bg-red-600 content-['']; */
+    @apply absolute bottom-0 left-0 z-[-1] h-full w-full origin-bottom translate-y-10 bg-red-500 content-[''];
+  }
+  .sns-links li:hover a:before {
+    /* @apply h-full; */
+    @apply translate-y-0;
+  }
+  .sns-links li:hover a svg {
+    @apply rotate-y-360 text-white;
+  }
+  .sns-links li:nth-child(1) a:before {
+    @apply bg-Facebook;
+  }
+  .sns-links li:nth-child(2) a:before {
+    @apply bg-Facebook;
+  }
+  .sns-links li:nth-child(3) a:before {
+    @apply bg-LinkdIn;
+  }
+  .sns-links li:nth-child(4) a:before {
+    @apply bg-Youtube;
+  }
+  .sns-links li span {
+    @apply invisible absolute bottom-[-15px] left-[50%] w-[60px] translate-x-[-50%] translate-y-2 rounded-md bg-black px-2 text-center text-xs text-white capitalize opacity-0;
+  }
+  .sns-links li:hover {
+    & > span {
+      @apply visible translate-y-0 opacity-100;
+    }
+  }
+}
