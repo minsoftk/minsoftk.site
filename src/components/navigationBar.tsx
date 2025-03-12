@@ -7,8 +7,8 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
-import { throttle } from 'lodash-es';
+import { useState } from 'react';
+// import { throttle } from 'lodash-es';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -41,7 +41,7 @@ export default function Navigation() {
   // }, [isOpen]);
 
   return (
-    <header className="bg-[#12CBC4] text-white">
+    <header className="bg-slate-400 text-white">
       <div className="relative z-20 mx-auto flex h-16 max-w-[900px] items-center justify-between px-2">
         {/* order-last */}
         <h1 className="font-bolds uppercase">Minsoftk</h1>
@@ -73,7 +73,7 @@ export default function Navigation() {
         <div>
           <nav
             aria-labelledby="external-navs"
-            className="flex gap-5 [&>ul]:flex [&>ul]:gap-5 [&>ul>li>a]:hover:cursor-pointer"
+            className="flex gap-10 [&>ul]:flex [&>ul]:gap-4 [&>ul>li>a]:hover:cursor-pointer"
           >
             <h2
               id="external-navs"
@@ -83,7 +83,7 @@ export default function Navigation() {
             </h2>
 
             {/* <ul className="[&>li>a]:rounded-full [&>li>a]:border [&>li>a]:border-[#222f3e] [&>li>a]:bg-[#222f3e]"> */}
-            <ul className="transition-all duration-200 ease-in-out [&>li>a]:border-b [&>li>a]:border-[#222f3e] [&>li>a]:bg-[#222f3e] [&>li>a]:hover:border-b-2">
+            <ul className="flex items-center transition-all duration-200 ease-in-out [&>li>a]:border-b [&>li>a]:border-[#222f3e] [&>li>a]:bg-[#222f3e] [&>li>a]:hover:border-b-2">
               <li>
                 <a className="!bg-transparent text-[#222f3e]">About</a>
               </li>
@@ -98,29 +98,30 @@ export default function Navigation() {
             </ul>
 
             {/* utility 생성 */}
-            <ul className="sns">
+            {/* <ul className="sns-links"> */}
+            <ul className="sns-links">
               <li>
-                <a
-                  href="https://github.com/minsoftk"
-                  className="!border-white !bg-transparent"
-                >
-                  <FontAwesomeIcon icon={faGit} />
+                <a href="https://github.com/minsoftk">
+                  <FontAwesomeIcon
+                    color="black"
+                    icon={faGit}
+                  />
                 </a>
               </li>
               <li>
-                <a
-                  href="https://blog.minsoftk.com"
-                  className="!border-white !bg-transparent"
-                >
-                  <FontAwesomeIcon icon={faLinkedinIn} />
+                <a href="https://blog.minsoftk.com">
+                  <FontAwesomeIcon
+                    color="black"
+                    icon={faLinkedinIn}
+                  />
                 </a>
               </li>
               <li>
-                <a
-                  href="https://blog.minsoftk.com"
-                  className="!border-white !bg-transparent"
-                >
-                  <FontAwesomeIcon icon={faFacebookF} />
+                <a href="https://blog.minsoftk.com">
+                  <FontAwesomeIcon
+                    color="black"
+                    icon={faFacebookF}
+                  />
                 </a>
               </li>
             </ul>
