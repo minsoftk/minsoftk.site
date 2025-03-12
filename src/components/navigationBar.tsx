@@ -1,40 +1,44 @@
 'use client';
 
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import {
+  faGit,
+  faLinkedinIn,
+  faFacebookF,
+} from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
-import { debounce } from 'lodash-es';
+import { throttle } from 'lodash-es';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [height, setHeight] = useState<string>('0px');
+  // const [height, setHeight] = useState<string>('auto');
+  // const navigationRef = useRef<HTMLDivElement>(null);
 
-  const navigationRef = useRef<HTMLDivElement>(null);
+  // const handleHeightState = throttle(() => {
+  //   if (navigationRef.current && window.innerWidth >= 768) {
+  //     setHeight('auto');
+  //   } else if (navigationRef.current && window.innerWidth < 768) {
+  //     setHeight('0px');
+  //   }
+  //   setIsOpen(false);
+  // }, 10);
 
-  const handleHeightState = debounce(() => {
-    if (navigationRef.current && window.innerWidth >= 764) {
-      setHeight('auto');
-      setIsOpen(false);
-    } else if (navigationRef.current && window.innerWidth < 764) {
-      setHeight('0px');
-    }
-  }, 10);
+  // useEffect(() => {
+  //   window.addEventListener('resize', handleHeightState);
+  //   return () => {
+  //     setIsOpen(false);
+  //     removeEventListener('resize', handleHeightState);
+  //   };
+  // }, []);
 
-  useEffect(() => {
-    window.addEventListener('resize', handleHeightState);
-    return () => {
-      setIsOpen(false);
-      removeEventListener('resize', handleHeightState);
-    };
-  }, []);
-
-  useEffect(() => {
-    console.log('🚀 ~ Navigation ~ isOpen:', isOpen);
-    if (navigationRef.current && window.innerWidth < 768) {
-      setHeight(isOpen ? `${navigationRef?.current.scrollHeight}px` : '0px');
-    }
-  }, [isOpen]);
+  // useEffect(() => {
+  //   console.log('🚀 ~ Navigation ~ isOpen:', isOpen);
+  //   console.log('🚀 ~ useEffect ~ window.innerWidth:', window.innerWidth);
+  //   if (navigationRef.current && window.innerWidth < 768) {
+  //     setHeight(isOpen ? `${navigationRef?.current.scrollHeight}px` : '0px');
+  //   }
+  // }, [isOpen]);
 
   return (
     <header className="bg-[#12CBC4] text-white">
@@ -43,20 +47,19 @@ export default function Navigation() {
         <h1 className="font-bolds uppercase">Minsoftk</h1>
 
         <div
-          ref={navigationRef}
-          className={`transition-height absolute top-[100%] left-0 mr-2 w-full overflow-hidden duration-300 ease-in-out md:static md:block md:w-auto [&>a]:m-0 [&>a]:block [&>a]:border-b [&>a]:bg-slate-500 [&>a]:py-2 [&>a]:text-center [&>a]:capitalize md:[&>a]:mx-2 md:[&>a]:inline md:[&>a]:border-none md:[&>a]:bg-transparent [&>a:hover]:underline ${isOpen ? 'h-auto' : 'h-0'} `}
-          style={{
-            height,
-          }}
+          // ref={navigationRef}
+          className={`absolute top-[100%] left-0 mr-2 max-h-0 w-full overflow-hidden transition-all duration-400 ease-in-out md:static md:block md:max-h-none md:w-auto ${isOpen ? `max-h-[200px]` : ''}`}
         >
+          {/* <Link href="/ui/accordion/react">아코디언</Link>
+          <Link href="/ui/tab-menu/react">탭메뉴</Link> */}
           <nav aria-labelledby="main-nav">
             <h2
               id="main-nav"
               className="sr-only"
             >
-              사이트 내 네비게이션
+              사이트 메인 네비게이션
             </h2>
-            <ul>
+            <ul className="md:flex [&>li>a]:m-0 [&>li>a]:block [&>li>a]:border-b [&>li>a]:bg-slate-500 [&>li>a]:py-2 [&>li>a]:text-center [&>li>a]:capitalize md:[&>li>a]:mx-2 md:[&>li>a]:border-none md:[&>li>a]:bg-transparent [&>li>a:hover]:underline">
               <li>
                 <Link href="/ui/accordion/react">아코디언</Link>
               </li>
@@ -67,46 +70,63 @@ export default function Navigation() {
           </nav>
         </div>
 
-        <nav
-          aria-labelledby="external-links"
-          className="[&>ul>li>a]:rounded-full [&>ul>li>a]:border [&>ul>li>a]:border-[#222f3e] [&>ul>li>a]:bg-[#222f3e] [&>ul>li>a]:p-2 [&>ul>li>a]:hover:cursor-pointer"
-        >
-          <h2
-            id="external-links"
-            className="sr-only"
+        <div>
+          <nav
+            aria-labelledby="external-navs"
+            className="flex gap-5 [&>ul]:flex [&>ul]:gap-5 [&>ul>li>a]:hover:cursor-pointer"
           >
-            Minsoftk 외부 링크
-          </h2>
-          <ul className="flex gap-3 [&>li]:w-full">
-            <li>
-              <a className="!bg-transparent text-[#222f3e]">About</a>
-            </li>
-            <li>
-              <a
-                href="https://blog.minsoftk.com"
-                className="!border-white !bg-transparent"
-              >
-                Blog
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://github.com/minsoftk"
-                className="!border-white !bg-transparent"
-              >
-                <FontAwesomeIcon icon="fa-brands fa-youtube" />
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://blog.minsoftk.com"
-                className="!border-white !bg-transparent"
-              >
-                Blog
-              </a>
-            </li>
-          </ul>
-        </nav>
+            <h2
+              id="external-navs"
+              className="sr-only"
+            >
+              Minsoftk 외부 링크
+            </h2>
+
+            {/* <ul className="[&>li>a]:rounded-full [&>li>a]:border [&>li>a]:border-[#222f3e] [&>li>a]:bg-[#222f3e]"> */}
+            <ul className="transition-all duration-200 ease-in-out [&>li>a]:border-b [&>li>a]:border-[#222f3e] [&>li>a]:bg-[#222f3e] [&>li>a]:hover:border-b-2">
+              <li>
+                <a className="!bg-transparent text-[#222f3e]">About</a>
+              </li>
+              <li>
+                <a
+                  href="https://blog.minsoftk.com"
+                  className="!border-white !bg-transparent"
+                >
+                  Blog
+                </a>
+              </li>
+            </ul>
+
+            {/* utility 생성 */}
+            <ul className="sns">
+              <li>
+                <a
+                  href="https://github.com/minsoftk"
+                  className="!border-white !bg-transparent"
+                >
+                  <FontAwesomeIcon icon={faGit} />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://blog.minsoftk.com"
+                  className="!border-white !bg-transparent"
+                >
+                  <FontAwesomeIcon icon={faLinkedinIn} />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://blog.minsoftk.com"
+                  className="!border-white !bg-transparent"
+                >
+                  <FontAwesomeIcon icon={faFacebookF} />
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
         <button
           onClick={() => setIsOpen((prev) => !prev)}
           className="hover:cursor-pointer md:hidden"
