@@ -45,7 +45,9 @@ export default function Navigation() {
     <header className="bg-slate-400 text-white">
       <div className="relative z-20 mx-auto flex h-16 max-w-[900px] items-center justify-between px-2">
         {/* order-last */}
-        <h1 className="font-bolds uppercase">Minsoftk</h1>
+        <h1 className="font-bolds uppercase">
+          <Link href="/">Minsoftk</Link>
+        </h1>
 
         <div
           // ref={navigationRef}
