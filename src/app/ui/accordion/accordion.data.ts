@@ -1,4 +1,6 @@
-const data = [
+import { AccordionDataType } from './type';
+
+export const data: AccordionDataType[] = [
   {
     id: '67c6b3a5d374ac4d2ef6df43',
     title: 'Et dolor labore esse in ullamco ex amet velit consequat.',

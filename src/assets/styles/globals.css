@@ -1,0 +1,42 @@
+@import 'tailwindcss';
+@import './global.navigation.css';
+@import './side.navigation.css';
+
+@theme {
+  --color-Youtube: oklch(54.54% 0.2059 27.74);
+  --color-Facebook: oklch(58.91% 0.2029 257.86);
+  --color-LinkdIn: oklch(51.56% 0.1632 254.73);
+
+  --font-card: 'Montserrat', sans-serif;
+
+  --animate-heart-bounce: heart-bounce 1s ease-in-out infinite;
+  @keyframes heart-bounce {
+    0% {
+      scale: 1;
+    }
+    50% {
+      scale: 1.4;
+    }
+    100% {
+      scale: 1;
+    }
+  }
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  /* color: var(--foreground);
+  background: var(--background); */
+  font-family: Arial, Helvetica, sans-serif;
+}

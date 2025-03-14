@@ -1,19 +1,19 @@
 'use client';
 
-import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/16/solid';
+import { ChevronDownIcon } from '@heroicons/react/16/solid';
 import { JSX, useState } from 'react';
 
 type DropDownProps = {
   title: string;
   datas: DropDownData[];
-  className: string;
   isOpen: boolean;
+
+  className?: string;
 };
 
 type DropDownData = {
   key: string;
   icon: JSX.Element;
-  text: string | '';
 };
 
 export default function DropDown(props: DropDownProps) {
@@ -57,7 +57,7 @@ export default function DropDown(props: DropDownProps) {
         onClick={(e: React.MouseEvent<HTMLUListElement>) =>
           handleDropDownSelect(e)
         }
-        className={`absolute top-[110%] max-h-[250px] w-full origin-top overflow-y-auto rounded-md border-gray-200 bg-white p-2 shadow-lg transition-all duration-300 ease-in-out [&>li]:cursor-pointer [&>li]:rounded-md [&>li]:p-2 [&>li:hover]:bg-gray-100 [&>li>span]:ml-2 ${isOpen ? 'scale-y-full' : 'scale-y-0'}`}
+        className={`absolute top-[110%] z-2 max-h-[250px] w-full origin-top overflow-y-auto rounded-md border-gray-200 bg-white p-2 shadow-lg transition-all duration-300 ease-in-out [&>li]:cursor-pointer [&>li]:rounded-md [&>li]:p-2 [&>li:hover]:bg-gray-100 [&>li>span]:ml-2 ${isOpen ? 'scale-y-full' : 'scale-y-0'}`}
       >
         {props.datas.map((data: DropDownData) => (
           <li key={data.key}>

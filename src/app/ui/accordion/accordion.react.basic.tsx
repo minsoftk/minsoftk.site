@@ -1,15 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
+import { AccordionItemType } from './type';
 
-type AccordionItemType = {
-  key: string;
-  id: string;
-  title: string;
-  description: string;
-  current: boolean;
-  toggleItem: () => void;
-};
-
-export function AccordionItem({
+export function AccordionBasic({
   current,
   id,
   title,

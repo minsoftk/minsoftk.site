@@ -1,6 +1,6 @@
 'use client';
 import VanillaWrapper from '@/components/vanillaWrapper';
-import data from '../accordion.data';
+import data from './accordion.data';
 
 const itemBuilder = ({
   id,
@@ -40,7 +40,6 @@ const initiator = (wrapper: HTMLDivElement) => {
     const $el = e.target as HTMLElement;
     if (!$el.classList.contains('accordion-tab')) return;
 
-    console.log('🚀 ~ handleClickTab ~ $el:', $el.dataset.id);
     const targetId = $el.dataset.id;
     if (!targetId) return;
     currentId = currentId === targetId ? null : targetId;
@@ -55,7 +54,6 @@ const initiator = (wrapper: HTMLDivElement) => {
   $ul.addEventListener('click', handleClickTab);
 
   const $items = data.map(itemBuilder);
-  console.log('🚀 ~ initiator ~ $items:', $items);
   $ul.append(...$items);
 
   wrapper.append($ul);
