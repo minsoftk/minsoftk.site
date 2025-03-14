@@ -11,7 +11,7 @@ export default function Card3() {
         </p>
       </div>
       <div className="card3-content">
-        <div className="[&>label>span]: [&>label]:relative [&>label]:my-3 [&>label]:flex [&>label]:items-center [&>label]:gap-4 [&>label]:rounded-xl [&>label]:border [&>label]:border-gray-300 [&>label]:p-4 [&>label>.check]:basis-[80px] [&>label>.check>em]:block [&>label>.check>em]:size-[44px] [&>label>.info>*]:block [&>label>input]:hidden">
+        <div className="[&>label>span]: [&>label]:relative [&>label]:my-3 [&>label]:flex [&>label]:items-center [&>label]:gap-4 [&>label]:rounded-xl [&>label]:border [&>label]:border-gray-300 [&>label]:p-4 [&>label>.check]:basis-[80px] [&>label>.check>em]:block [&>label>.check>em]:size-[44px] [&>label>.check>em]:bg-[url(/images/icon-radio.png)] [&>label>.info>*]:block [&>label>input]:hidden">
           <label
             htmlFor="check1"
             className="has-checked:text-color has-checked:border-3 has-checked:border-purple-700 has-checked:text-purple-700"
