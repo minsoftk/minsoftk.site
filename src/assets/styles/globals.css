@@ -1,4 +1,6 @@
 @import 'tailwindcss';
+@import './global.navigation.css';
+@import './side.navigation.css';
 
 @theme {
   --color-Youtube: oklch(54.54% 0.2059 27.74);

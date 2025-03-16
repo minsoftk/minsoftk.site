@@ -60,8 +60,10 @@ export default function Card3() {
           </label>
         </div>
         <div className="mx-auto mt-6 w-2/3 text-center [&>button]:my-2 [&>button]:block [&>button]:w-full [&>button]:rounded-full [&>button]:p-3">
-          <button className="bg-black text-white">계속하기</button>
-          <button className="border border-gray-300 bg-white">
+          <button className="bg-black text-white hover:cursor-pointer">
+            계속하기
+          </button>
+          <button className="border border-gray-300 bg-white hover:cursor-pointer">
             페이팔로 계속하기
           </button>
           <Link

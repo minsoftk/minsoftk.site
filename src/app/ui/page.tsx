@@ -1,12 +1,12 @@
 import { dropdownData } from '@/assets/data/DropdownData';
-import Card2 from '@/components/CardWithFlip';
-import Card3 from '@/components/CardWithRadio';
-import Card1 from '@/components/CardWithTransition';
+import Card2 from '@/components/Card.3DFlip';
+import Card3 from '@/components/Card.Radio';
+import Card1 from '@/components/Card.Transition';
 import Dropdown from '@/components/Dropdown';
 
 export default function UIPage() {
   return (
-    <div className="grid h-full w-full grid-cols-[1fr_1fr] grid-rows-[100%] justify-items-center font-[family-name:var(--font-geist-sans)]">
+    <div className="grid grid-cols-[1fr_1fr] grid-rows-[100%] justify-items-center font-[family-name:var(--font-geist-sans)]">
       <div className="cols-starts-1 [&>*]:my-10 [&>section>h2]:py-5">
         <section>
           <h2 className="">#1 드롭다운 With Scale</h2>

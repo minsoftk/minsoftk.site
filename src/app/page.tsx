@@ -1,8 +1,8 @@
 import Dropdown from '@/components/Dropdown';
 
-import Card1 from '@/components/CardWithTransition';
-import Card2 from '@/components/CardWithFlip';
-import Card3 from '@/components/CardWithRadio';
+import Card1 from '@/components/Card.Transition';
+import Card2 from '@/components/Card.3DFlip';
+import Card3 from '@/components/Card.Radio';
 import { dropdownData } from '@/assets/data/DropdownData';
 
 export default function Home() {
