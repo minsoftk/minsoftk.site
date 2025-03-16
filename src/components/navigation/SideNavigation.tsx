@@ -13,8 +13,10 @@ import { NaviListType } from './navigation.type';
 
 export default function SideNavigation({
   naviList,
+  title,
 }: {
   naviList: NaviListType[];
+  title: string;
 }) {
   const [isOpen, setIsOpen] = useState<boolean>(true);
 
@@ -22,7 +24,7 @@ export default function SideNavigation({
   return (
     <div
       className={cn(
-        'sidebar group sticky top-16 h-screen bg-gray-800 p-3',
+        'sidebar group h-full bg-gray-800 p-3',
         'transition-all duration-300 ease-in-out',
         isOpen ? 'w-[250px]' : 'sidebar-close w-[65px]',
       )}
@@ -32,7 +34,7 @@ export default function SideNavigation({
           'logo mb-5 flex items-center justify-between border-b border-white py-2 text-white',
         )}
       >
-        <h1 className="group-[.sidebar-close]:hidden">MinsoftK UI 컴포넌트</h1>
+        <h1 className="group-[.sidebar-close]:hidden">{title}</h1>
         <FontAwesomeIcon
           onClick={handleOpen}
           className={cn(

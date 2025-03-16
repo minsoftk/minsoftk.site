@@ -105,7 +105,7 @@ export default function RootLayout({
             subNaviList={subNaviList}
           ></GlobalNavigation>
         </nav>
-        {children}
+        <div className="pt-16">{children}</div>
       </body>
     </html>
   );
