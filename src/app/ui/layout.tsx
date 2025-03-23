@@ -33,6 +33,18 @@ const uiComponentNavList: NaviListType[] = [
     href: '/ui/tab-menu',
     iconComponent: <FontAwesomeIcon icon={faTable} />,
   },
+  {
+    key: '글래스모피즘',
+    text: '글래스모피즘',
+    href: '/ui/glassmophism',
+    iconComponent: <FontAwesomeIcon icon={faTable} />,
+  },
+  {
+    key: '애니메이션 모달',
+    text: '애니메이션 모달',
+    href: '/ui/modal',
+    iconComponent: <FontAwesomeIcon icon={faTable} />,
+  },
 ];
 
 export default function UIPageLayout({
