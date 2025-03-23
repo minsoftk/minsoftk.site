@@ -26,44 +26,6 @@ export const data: AccordionDataType[] = [
     description:
       'Adipisicing ullamco id sunt labore laboris ipsum ea consequat. Incididunt quis duis quis nisi veniam in ea exercitation quis ullamco officia commodo. Enim enim mollit excepteur ullamco sit exercitation excepteur elit labore incididunt consectetur consequat deserunt voluptate.',
   },
-  {
-    id: '67c6b3a5d83130ca71c263c3',
-    title:
-      'Adipisicing nostrud consequat sit laboris pariatur aliqua veniam magna magna anim ut in anim elit.',
-    description:
-      'Irure sit nisi ea ad deserunt esse elit minim. Deserunt incididunt voluptate occaecat dolor veniam sint eu. Nisi laborum nostrud culpa anim aliqua proident fugiat quis dolor id magna elit.',
-  },
-  {
-    id: '67c6b3a5fd4d97b8133a4a57',
-    title: 'Aliquip ea nostrud ad labore quis aliqua nulla ad.',
-    description:
-      'Veniam est esse Lorem duis magna pariatur ut occaecat dolor ut sit officia Lorem. Nisi labore ut sit incididunt est ea incididunt ut elit veniam velit irure cupidatat. Eu cupidatat culpa reprehenderit qui enim et exercitation cupidatat proident amet reprehenderit.',
-  },
-  {
-    id: '67c6b3a577cfb360367a8b72',
-    title: 'Consequat aute non in est.',
-    description:
-      'Sint ad id consectetur ad nostrud occaecat dolore anim elit eiusmod. Eiusmod sint amet fugiat labore aute eu mollit laboris officia nostrud nulla. Et nulla elit laborum non ullamco ullamco ex aute est excepteur Lorem consectetur et.',
-  },
-  {
-    id: '67c6b3a513658253658ee2f2',
-    title:
-      'Ea eiusmod occaecat consequat ipsum quis exercitation magna commodo reprehenderit cillum occaecat ullamco laboris in.',
-    description:
-      'Reprehenderit id reprehenderit aute commodo ipsum mollit qui. Tempor ipsum eiusmod officia dolore officia. Aliquip amet nulla laboris irure incididunt minim elit eu mollit esse ipsum occaecat labore quis.',
-  },
-  {
-    id: '67c6b3a5fb28fb740bc74d02',
-    title: 'Quis laborum deserunt officia do anim sit.',
-    description:
-      'Commodo sunt duis ex aliqua velit consectetur minim elit duis aute laboris in. Adipisicing exercitation laborum sit sit laboris do cupidatat magna voluptate. Ut ullamco voluptate ea proident.',
-  },
-  {
-    id: '67c6b3a54c4352ede3c8e0df',
-    title: 'Ex id ad nulla aliqua dolore sint voluptate ex elit.',
-    description:
-      'Veniam deserunt duis pariatur duis. Duis eiusmod irure commodo ad magna deserunt laborum eu. Esse minim et ullamco incididunt culpa sunt proident magna consequat do.',
-  },
 ];
 
 export default data;

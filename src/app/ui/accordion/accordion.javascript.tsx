@@ -34,7 +34,6 @@ const itemBuilder = ({
 const initiator = (wrapper: HTMLDivElement) => {
   let currentId: string | null = null;
   const $ul = document.createElement('ul');
-  $ul.className = 'p-2 [&>li]:m-3';
 
   const handleClickTab = (e: Event) => {
     const $el = e.target as HTMLElement;
@@ -60,10 +59,9 @@ const initiator = (wrapper: HTMLDivElement) => {
   ($items[0].children[0] as HTMLElement).click();
 };
 
-export default function AccordionReactComponent() {
+export default function AccordionJSComponent() {
   return (
     <>
-      <h1 className="p-4 text-2xl">#1 아코디언 자바스크립트</h1>
       <VanillaWrapper initiator={initiator}></VanillaWrapper>
     </>
   );

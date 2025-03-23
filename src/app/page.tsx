@@ -23,7 +23,7 @@ export default function Home() {
           <Card1></Card1>
         </section>
         <section>
-          <h2>#2. 3D Flip 카드</h2>
+          <h2>#3. 3D Flip 카드</h2>
           <Card2></Card2>
         </section>
       </div>

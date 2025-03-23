@@ -1,7 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { AccordionItemType } from './type';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { cn } from '@/assets/utils/css';
 
-export function AccordionBasic({
+export default function AccordionReactBasic({
   current,
   id,
   title,
@@ -20,16 +23,28 @@ export function AccordionBasic({
   return (
     <li
       key={id}
-      className="border p-2"
+      className="list-none border-b border-gray-300 p-3"
     >
-      <button
+      <div
         onClick={toggleItem}
-        aria-expanded={current}
-        aria-controls={`accordion-content-${id}`}
-        className="w-full text-left text-xl font-bold hover:cursor-pointer"
+        className={cn('flex items-center justify-between gap-3 py-2')}
       >
-        {title}
-      </button>
+        <button
+          aria-expanded={current}
+          aria-controls={`accordion-content-${id}`}
+          className="cursor-pointer text-left text-xl font-bold"
+        >
+          {title}
+        </button>
+        <em
+          className={cn(
+            'transition-all duration-300',
+            current ? 'rotate-180' : '',
+          )}
+        >
+          <FontAwesomeIcon icon={faChevronDown}></FontAwesomeIcon>
+        </em>
+      </div>
 
       <div
         ref={contentRef}
@@ -44,36 +59,11 @@ export function AccordionBasic({
         //     ? 'translate-y-0 opacity-100 max-h-auto'
         //     : '-translate-y-4 opacity-0 max-h-0'
         // }`}
-        className={`overflow-hidden transition-all duration-300 ease-in-out`}
+        className={cn(`overflow-hidden transition-all duration-300`)}
         style={{ height }}
       >
         <p className="p-2 text-sm">{description}</p>
       </div>
     </li>
-  );
-}
-
-export function AccordionItemWithDetails({
-  current,
-  id,
-  title,
-  description,
-}: AccordionItemType) {
-  const contentRef = useRef<HTMLDivElement>(null);
-
-  return (
-    <details
-      key={id}
-      className="group transtion-all w-full border p-2 text-left text-xl font-bold duration-200"
-      open={current}
-    >
-      <summary className="hover:cursor-pointer">{title}</summary>
-      <div
-        ref={contentRef}
-        className="overflow-hidden p-2 text-sm transition-all duration-300 ease-in-out"
-      >
-        <p>{description}</p>
-      </div>
-    </details>
   );
 }

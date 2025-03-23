@@ -4,8 +4,12 @@
 
 @theme {
   --color-Youtube: oklch(54.54% 0.2059 27.74);
+  --color-Twitter: oklch(68.18% 0.1584 243.35);
   --color-Facebook: oklch(58.91% 0.2029 257.86);
   --color-LinkdIn: oklch(51.56% 0.1632 254.73);
+  --color-Instagram: oklch(61.95% 0.1995 14.61);
+  --color-Line: oklch(70.8% 0.240931 142.4953);
+  --color-Tiktok: oklch(61.09% 0.2328 16.09);
 
   --font-card: 'Montserrat', sans-serif;
 
@@ -23,12 +27,14 @@
   }
 }
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffffff;
+    --foreground: #171717;
+  }
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
