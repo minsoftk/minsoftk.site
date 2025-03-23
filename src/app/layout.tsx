@@ -36,8 +36,8 @@ const mainNaviList: NaviListType[] = [
     href: '/ui',
   },
   {
-    key: '레이아웃 컴포넌트 모음',
-    text: '레이아웃 컴포넌트 모음',
+    key: '섹션 UI 컴포넌트 모음',
+    text: '섹션 UI 컴포넌트 모음',
     href: '/layout',
   },
 ];
