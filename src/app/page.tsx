@@ -1,4 +1,4 @@
-import Dropdown from '@/components/Dropdown';
+import Dropdown from '@/components/DropDown';
 
 import Card1 from '@/components/Card.Transition';
 import Card2 from '@/components/Card.3DFlip';
