@@ -1,0 +1,18 @@
+@layer components {
+  /** 
+      UI-Component Page
+      Sidebar
+    */
+  .sidebar.sidebar-close .navi > li {
+    @apply relative;
+  }
+  .sidebar.sidebar-close .navi > li > a > span {
+    @apply absolute top-1 left-[120%] hidden w-max min-w-[90px] rounded-sm bg-black p-2 text-center text-sm;
+  }
+  .sidebar.sidebar-close .navi > li > a > span::before {
+    @apply absolute top-[15px] -left-[4px] size-[8px] rotate-45 bg-black content-[''];
+  }
+  .sidebar.sidebar-close .navi > li:hover span {
+    @apply block;
+  }
+}
