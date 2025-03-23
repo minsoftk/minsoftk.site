@@ -3,7 +3,7 @@ import Card2 from '@/components/Card.3DFlip';
 import Card3 from '@/components/Card.Radio';
 import Card1 from '@/components/Card.Transition';
 import DarkMode from '@/components/DarkMode';
-import Dropdown from '@/components/Dropdown';
+import Dropdown from '@/components/DropDown';
 import Modal from '@/components/Modal';
 import HoverTooltip from '@/components/PriceTag';
 import Table from '@/components/Table';
